@@ -7,7 +7,9 @@
 		"android": "expo start --android",
 		"ios": "expo start --ios",
 		"web": "expo start --web",
-		"test": "jest __tests__/*"
+		"test": "jest __tests__/*",
+		"lint": "eslint . --ext .ts,.tsx,.js,.jsx,.json",
+		"lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx,.json --fix"
 	},
 	"dependencies": {
 		"@types/jest": "^29.2.5",
@@ -24,6 +26,10 @@
 		"@babel/core": "^7.12.9",
 		"@types/react": "~18.0.14",
 		"@types/react-native": "~0.70.6",
+		"@typescript-eslint/eslint-plugin": "^5.48.0",
+		"@typescript-eslint/parser": "^5.48.0",
+		"eslint": "^8.31.0",
+		"prettier": "^2.8.1",
 		"typescript": "^4.6.3"
 	},
 	"jest": {
