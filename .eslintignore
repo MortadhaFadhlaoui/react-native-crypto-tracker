@@ -1,0 +1,7 @@
+node_modules
+dist
+.expo
+.expo-shared
+web-build
+babel.config.js
+__tests__/**
