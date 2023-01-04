@@ -1,21 +1,22 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
-
+import { render } from '@testing-library/react-native'
 import App from '../App'
 import { Header } from '../src'
 
 describe('<App />', () => {
-	it('has 2 child', () => {
-		const tree = renderer.create(<App />).toJSON()
-		// @ts-ignore
-		expect(tree.children.length).toBe(2)
+	it('has text', () => {
+		const { getByText } = render(<App />)
+		expect(
+			getByText('Open up App.tsx to start working on your app!'),
+		).not.toBeNull()
 	})
 })
 
 describe('<Header />', () => {
-	it('has 1 child', () => {
-		const tree = renderer.create(<Header />).toJSON()
-		// @ts-ignore
-		expect(tree.children.length).toBe(1)
+	it('has text', () => {
+		const { getByText } = render(<Header />)
+		expect(
+			getByText('Please select the image of the crossword and clues:'),
+		).not.toBeNull()
 	})
 })
