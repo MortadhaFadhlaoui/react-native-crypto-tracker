@@ -5,5 +5,5 @@ dist
 web-build
 babel.config.js
 jest.config.ts
-__tests__/**
+test/**
 coverage
