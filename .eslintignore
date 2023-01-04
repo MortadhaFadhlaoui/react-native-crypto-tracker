@@ -4,4 +4,6 @@ dist
 .expo-shared
 web-build
 babel.config.js
+jest.config.ts
 __tests__/**
+coverage
