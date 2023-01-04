@@ -1,4 +1,4 @@
-// jest.config.js
+// jest.config.ts
 // Sync object
 module.exports = {
   preset: "jest-expo",

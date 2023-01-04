@@ -30,6 +30,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.12.9",
+		"@testing-library/jest-native": "^5.4.0",
 		"@testing-library/react-native": "^11.5.0",
 		"@types/react": "^18.0.26",
 		"@types/react-native": "~0.70.6",
