@@ -1,4 +1,4 @@
-import { formatAddress } from '../../src/utils/formatAddress'
+import { formatAddress } from '../../src/utils/format-address'
 
 describe('formatAddress', () => {
 	it('returns the formatted address', () => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react-native'
-import { Hello } from '../../src/components/Hello'
+import { Hello } from '../../src/components/hello'
 
 describe('Hello', () => {
 	it('renders the correct message Text', () => {
