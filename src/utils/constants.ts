@@ -1,0 +1,5 @@
+export const STANDARD_SCREEN_HEIGHT = 812
+export const PRICE_PRECISION = 6
+export const CHANGE_PRECISION = 2
+export const LETTERS_FOR_RANDOM_COLOR = '0123456789ABCDEF'
+export const TWENTY_FOUR = '24h'

@@ -1,28 +1,7 @@
-import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import 'react-native-gesture-handler'
+import * as React from 'react'
+import { RootNavigator } from './src/navigation/root-navigation'
 
 export default function App() {
-	return (
-		<View style={styles.container}>
-			<Image
-				source={require('./assets/adaptive-icon.png')}
-				style={styles.logo}
-			/>
-			<Text>Open up App.tsx to start working on your app!</Text>
-		</View>
-	)
+	return <RootNavigator />
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-	logo: {
-		width: 120,
-		height: 120,
-		margin: 10,
-	},
-})
