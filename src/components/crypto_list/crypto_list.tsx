@@ -15,7 +15,6 @@ export const CryptoList = ({ data }: CryptoListProps) => {
 			ItemSeparatorComponent={() => <Separator />}
 			ListFooterComponent={<Footer loading={data.length !== 0} />}
 			showsVerticalScrollIndicator={false}
-			style={{ backgroundColor: WHITE }}
 		/>
 	)
 }
