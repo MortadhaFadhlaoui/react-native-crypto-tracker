@@ -14,6 +14,9 @@ web-build/
 .DS_Store
 coverage/
 
-e2e/bin/*
-
+# windows
 .history
+
+# e2e
+e2e/bin/*
+artifacts/

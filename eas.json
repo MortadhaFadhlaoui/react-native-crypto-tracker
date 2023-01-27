@@ -4,13 +4,28 @@
 	},
 	"build": {
 		"development": {
+			// debug mode
 			"developmentClient": true,
-			"distribution": "internal"
+			// development mode
+			"distribution": "internal",
+			"android": {
+				"buildType": "apk"
+			}
 		},
 		"preview": {
 			"distribution": "internal"
 		},
-		"production": {}
+		"production": {},
+		"test": {
+			"android": {
+				"gradleCommand": ":app:assembleRelease :app:assembleAndroidTest -DtestBuildType=release",
+				"buildType": "apk"
+			},
+			"ios": {
+				"simulator": true
+			},
+			"buildArtifactPaths": ["artifacts/**/*.png"]
+		}
 	},
 	"submit": {
 		"production": {}

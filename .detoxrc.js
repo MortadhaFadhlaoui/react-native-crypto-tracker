@@ -1,11 +1,4 @@
 /** @type {Detox.DetoxConfig} */
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const fs = require('fs')
-
-const dir = './e2e/bin'
-const files = fs.readdirSync(dir)
-const buildName = files.map(dir => dir)
-
 module.exports = {
 	testRunner: {
 		args: {
@@ -19,20 +12,29 @@ module.exports = {
 	apps: {
 		'ios.debug': {
 			type: 'ios.app',
-			binaryPath: `e2e/bin/${buildName}`,
+			binaryPath: 'ios/build/Build/Products/Debug-iphonesimulator/YOUR_APP.app',
+			build:
+				'xcodebuild -workspace ios/YOUR_APP.xcworkspace -scheme YOUR_APP -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build',
 		},
 		'ios.release': {
 			type: 'ios.app',
-			binaryPath: `e2e/bin/${buildName}`,
+			binaryPath:
+				'ios/build/Build/Products/Release-iphonesimulator/YOUR_APP.app',
+			build:
+				'xcodebuild -workspace ios/YOUR_APP.xcworkspace -scheme YOUR_APP -configuration Release -sdk iphonesimulator -derivedDataPath ios/build',
 		},
 		'android.debug': {
 			type: 'android.apk',
-			binaryPath: `e2e/bin/${buildName}`,
+			binaryPath: 'android/app/build/outputs/apk/debug/app-debug.apk',
+			build:
+				'cd android ; ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug ; cd ..',
 			reversePorts: [8081],
 		},
 		'android.release': {
 			type: 'android.apk',
-			binaryPath: `e2e/bin/${buildName}`,
+			binaryPath: 'android/app/build/outputs/apk/release/app-release.apk',
+			build:
+				'cd android ; gradlew assembleRelease assembleAndroidTest -DtestBuildType=release ; cd ..',
 		},
 	},
 	devices: {
@@ -51,7 +53,7 @@ module.exports = {
 		emulator: {
 			type: 'android.emulator',
 			device: {
-				avdName: 'Pixel_3a_API_30_x86',
+				avdName: 'FWVGA_API_30',
 			},
 		},
 	},
