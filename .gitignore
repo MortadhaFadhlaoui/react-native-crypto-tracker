@@ -19,4 +19,6 @@ coverage/
 
 # e2e
 e2e/bin/*
+android/
+ios/
 artifacts/
