@@ -1,6 +1,6 @@
 import React from 'react'
 import { ActivityIndicator, FlatList } from 'react-native'
-import { BLUE_SKY, WHITE } from '../../theme/colors'
+import { BLUE_SKY } from '../../theme/colors'
 import { CryptoItem } from '../crypto-item/crypto-item'
 import Footer from '../footer/footer'
 import Separator from '../separator/separator'

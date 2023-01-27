@@ -15,3 +15,5 @@ web-build/
 coverage/
 
 e2e/bin/*
+
+.history

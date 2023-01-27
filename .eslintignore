@@ -7,3 +7,4 @@ babel.config.js
 jest.config.ts
 __tests__/**
 coverage
+.history
