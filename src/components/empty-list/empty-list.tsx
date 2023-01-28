@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View, StyleSheet } from 'react-native'
-import { BLUE_SKY } from '../../theme/colors'
 import { EmptyListProps } from './empty-list.props'
+import { BLUE_SKY } from '../../theme/colors'
 
 export const EmptyList = ({
 	containerStyle,

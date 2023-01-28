@@ -10,3 +10,5 @@ coverage
 .history
 metro.config.js
 index.js
+android/
+ios/

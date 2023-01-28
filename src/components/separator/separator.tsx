@@ -1,8 +1,8 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
-import { WHITE } from '../../theme/colors'
 import { SeparatorProps } from './separator.props'
+import { WHITE } from '../../theme/colors'
 
 const Separator = ({ style }: SeparatorProps) => {
 	return <View style={[styles.separator, style]} />

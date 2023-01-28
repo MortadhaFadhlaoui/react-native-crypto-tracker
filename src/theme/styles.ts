@@ -4,28 +4,10 @@ import { BLACK, WHITE } from './colors'
 import { SCALE_18, SCALE_30 } from './spacing'
 
 const DefaultStyles = StyleSheet.create({
-	text: {
-		color: BLACK,
-		fontSize: SCALE_18,
-		fontWeight: '400',
-		fontStyle: 'normal',
-	},
-	textBold: {
-		color: BLACK,
-		fontSize: SCALE_18,
-		fontWeight: 'bold',
-		fontStyle: 'normal',
-	},
-	screenTitle: {
-		color: BLACK,
-		fontSize: SCALE_30,
-		fontWeight: 'bold',
-		fontStyle: 'normal',
-	},
 	container: {
-		flex: 1,
-		backgroundColor: WHITE,
 		alignItems: 'center',
+		backgroundColor: WHITE,
+		flex: 1,
 		justifyContent: 'center',
 		paddingHorizontal: hp('2'),
 	},
@@ -33,10 +15,28 @@ const DefaultStyles = StyleSheet.create({
 		flexDirection: 'row',
 	},
 	indicatorLoading: {
-		flex: 1,
-		width: '100%',
 		alignSelf: 'center',
 		backgroundColor: WHITE,
+		flex: 1,
+		width: '100%',
+	},
+	screenTitle: {
+		color: BLACK,
+		fontSize: SCALE_30,
+		fontStyle: 'normal',
+		fontWeight: 'bold',
+	},
+	text: {
+		color: BLACK,
+		fontSize: SCALE_18,
+		fontStyle: 'normal',
+		fontWeight: '400',
+	},
+	textBold: {
+		color: BLACK,
+		fontSize: SCALE_18,
+		fontStyle: 'normal',
+		fontWeight: 'bold',
 	},
 })
 export default DefaultStyles

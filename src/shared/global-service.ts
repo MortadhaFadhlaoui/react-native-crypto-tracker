@@ -6,10 +6,10 @@ import {
 } from '../utils/constants'
 
 const toSixDigits = (num: number): number => {
-	if (num % 1 == 0) return num
+	if (num % 1 === 0) return num
 	const toString = num + ''
 	const toArray = toString.split('')
-	const index = toArray.findIndex(x => x == '.')
+	const index = toArray.findIndex(x => x === '.')
 	const newNumber = +num.toPrecision(
 		index > PRICE_PRECISION ? 0 : PRICE_PRECISION - index,
 	)

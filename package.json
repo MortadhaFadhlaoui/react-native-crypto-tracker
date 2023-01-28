@@ -7,10 +7,7 @@
 		"android": "expo run:android",
 		"ios": "expo run:ios",
 		"web": "expo start --web",
-		"prettier:format": "prettier --config .prettierrc '**/*.{ts,tsx,js,json}' --write",
-		"lint": "eslint . --ext .ts,.tsx,.js,.jsx,.json",
-		"lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx,.json --fix",
-		"lint:stage": "yarn prettier:format && yarn lint",
+		"lint:fix": "prettier --config .prettierrc **/*.{ts,tsx,js,json} --write && eslint --fix . --ext .ts,.tsx && tsc --project ./tsconfig.json --noemit",
 		"test": "jest __tests__/*",
 		"test:watch": "yarn test --watch",
 		"test:ci": "yarn test --coverage",
@@ -21,7 +18,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "lint:stage"
+			"pre-commit": "lint:fix"
 		}
 	},
 	"dependencies": {
@@ -57,9 +54,14 @@
 		"eslint": "^8.31.0",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-config-react": "^1.1.7",
+		"eslint-config-standard": "^17.0.0",
+		"eslint-plugin-import": "^2.27.5",
 		"eslint-plugin-jest": "^27.2.0",
+		"eslint-plugin-n": "^15.6.1",
 		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-promise": "^6.1.1",
 		"eslint-plugin-react": "^7.31.11",
+		"eslint-plugin-react-native": "^4.0.0",
 		"husky": "^8.0.3",
 		"jest": "^29.4.1",
 		"jest-expo": "^47.0.1",

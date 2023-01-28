@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 import Svg, { Circle, Text } from 'react-native-svg'
-import { WHITE } from '../../theme/colors'
 import { SvgCircleProps } from './svg-circle.props'
+import { WHITE } from '../../theme/colors'
 
 export const SvgCircle = ({
 	title,

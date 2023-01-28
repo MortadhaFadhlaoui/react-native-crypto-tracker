@@ -1,5 +1,5 @@
-import { STANDARD_SCREEN_HEIGHT } from '../utils/constants'
 import { RFValue } from 'react-native-responsive-fontsize'
+import { STANDARD_SCREEN_HEIGHT } from '../utils/constants'
 
 export const SCALE_12 = RFValue(12, STANDARD_SCREEN_HEIGHT)
 export const SCALE_24 = RFValue(24, STANDARD_SCREEN_HEIGHT)

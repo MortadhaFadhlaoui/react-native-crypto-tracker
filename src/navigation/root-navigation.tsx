@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { StyleSheet } from 'react-native'
 import { Cryptos } from '../screens/cryptos'
+import { TRANSPARENT } from '../theme/colors'
 
 const Stack = createStackNavigator()
 
@@ -28,9 +29,6 @@ export const RootNavigator = () => {
 const styles = StyleSheet.create({
 	headerStyle: {
 		elevation: 0,
-		shadowColor: 'transparent',
-	},
-	headerTitleStyle: {
-		alignSelf: 'center',
+		shadowColor: TRANSPARENT,
 	},
 })

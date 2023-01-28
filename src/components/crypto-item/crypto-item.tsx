@@ -7,9 +7,9 @@ import {
 import { getRandomColor } from '../../shared/global-service'
 import { BLUE_SKY, RED, WHITE } from '../../theme/colors'
 import DefaultStyles from '../../theme/styles'
-import { SvgCircle } from '../svg-circle/svg-circle'
-import { TWENTY_FOUR } from '../../utils/constants'
 import { ICrypto } from '../../types/crypto'
+import { TWENTY_FOUR } from '../../utils/constants'
+import { SvgCircle } from '../svg-circle/svg-circle'
 
 export const CryptoItem = ({
 	name,
@@ -28,7 +28,7 @@ export const CryptoItem = ({
 					</Text>
 				</View>
 				<Text style={{ ...DefaultStyles.text, ...styles.change }}>
-					{`${TWENTY_FOUR}: `}
+					{TWENTY_FOUR}
 					<Text
 						style={{
 							...DefaultStyles.textBold,
@@ -49,13 +49,13 @@ export const CryptoItem = ({
 }
 
 const styles = StyleSheet.create({
+	change: { paddingTop: hp('2') },
 	container: {
-		flex: 1,
-		height: hp('12'),
-		flexDirection: 'row',
 		alignItems: 'center',
 		backgroundColor: WHITE,
+		flex: 1,
+		flexDirection: 'row',
+		height: hp('12'),
 	},
-	change: { paddingTop: hp('2') },
-	priceContainer: { flex: 1, alignItems: 'flex-end', marginRight: wp('2') },
+	priceContainer: { alignItems: 'flex-end', flex: 1, marginRight: wp('2') },
 })

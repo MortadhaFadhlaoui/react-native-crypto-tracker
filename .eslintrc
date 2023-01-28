@@ -1,22 +1,84 @@
 {
 	"root": true,
-	"parser": "@typescript-eslint/parser",
-	"plugins": ["react", "@typescript-eslint", "prettier", "jest"],
+	"plugins": [
+		"react",
+		"@typescript-eslint",
+		"prettier",
+		"jest",
+		"react-native"
+	],
 	"extends": [
 		"eslint:recommended",
-		"plugin:react/recommended",
-		"plugin:@typescript-eslint/eslint-recommended",
 		"plugin:@typescript-eslint/recommended",
-		"prettier",
-		"plugin:jest/recommended"
+		"plugin:react/recommended",
+		"plugin:react-native/all",
+		"plugin:jest/recommended",
+		"standard",
+		"prettier"
 	],
+	"parser": "@typescript-eslint/parser", // Specifies the ESLint parser
+	"parserOptions": {
+		"ecmaVersion": 2021, // Allows for the parsing of modern ECMAScript features
+		"sourceType": "module", // Allows for the use of imports
+		"ecmaFeatures": {
+			"jsx": true // Allows for the parsing of JSX
+		}
+	},
 	"rules": {
-		"prettier/prettier": 2,
-		"jest/no-disabled-tests": "warn",
-		"jest/no-focused-tests": "error",
-		"jest/no-identical-title": "error",
-		"jest/prefer-to-have-length": "warn",
-		"jest/valid-expect": "error"
+		// suppress errors for missing 'import React' in files
+		"react/react-in-jsx-scope": "off",
+		"indent": 0,
+		"linebreak-style": ["error", "unix"],
+		"quotes": ["error", "single"],
+		"semi": ["error", "never"],
+		"@typescript-eslint/ban-ts-ignore": 0,
+		"@typescript-eslint/explicit-function-return-type": 0,
+		"@typescript-eslint/explicit-member-accessibility": 0,
+		"@typescript-eslint/explicit-module-boundary-types": 0,
+		"@typescript-eslint/indent": 0,
+		"@typescript-eslint/member-delimiter-style": 0,
+		"@typescript-eslint/no-empty-interface": 0,
+		"@typescript-eslint/no-explicit-any": ["error"],
+		"@typescript-eslint/no-object-literal-type-assertion": 0,
+		"@typescript-eslint/no-var-requires": 0,
+		"react/display-name": 0,
+		"spaced-comment": "off",
+		"multiline-ternary": 0,
+		"no-undef": 0,
+		"no-unused-vars": 0,
+		"no-use-before-define": "off",
+		"react/no-unescaped-entities": 0,
+		"react/prop-types": "off",
+		"space-before-function-paren": 0,
+		"no-default-export": 0,
+		"no-duplicate-imports": ["error"],
+		"import/newline-after-import": [
+			"error",
+			{
+				"count": 1
+			}
+		],
+		"camelcase": 0,
+		"import/order": [
+			"error",
+			{
+				"groups": ["builtin", "external", "internal"],
+				"pathGroups": [
+					{
+						"pattern": "react",
+						"group": "external",
+						"position": "before"
+					}
+				],
+				"pathGroupsExcludedImportTypes": ["react"],
+				"alphabetize": {
+					"order": "asc",
+					"caseInsensitive": true
+				}
+			}
+		],
+		"no-color-literals": 0,
+		"require-await": "error"
 	},
 	"settings": {
 		"react": {
