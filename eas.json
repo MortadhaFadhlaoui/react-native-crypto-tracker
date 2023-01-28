@@ -18,6 +18,7 @@
 		"production": {},
 		"test": {
 			"android": {
+				"distribution": "internal",
 				"gradleCommand": ":app:assembleRelease :app:assembleAndroidTest -DtestBuildType=release",
 				"buildType": "apk"
 			},
