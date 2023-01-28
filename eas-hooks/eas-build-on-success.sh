@@ -2,7 +2,7 @@
 
 set -eox pipefail
 
-ANDROID_EMULATOR=pixel_4
+ANDROID_EMULATOR=FWVGA_API_30
 
 if [[ "$EAS_BUILD_PLATFORM" == "android" ]]; then
   # Start emulator
