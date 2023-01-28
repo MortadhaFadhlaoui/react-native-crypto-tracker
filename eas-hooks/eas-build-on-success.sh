@@ -2,7 +2,7 @@
 
 set -eox pipefail
 
-ANDROID_EMULATOR=pixel_4
+ANDROID_EMULATOR=FWVGA_API_30
 
 if [[ "$EAS_BUILD_PLATFORM" == "android" ]]; then
   # Start emulator
@@ -18,10 +18,10 @@ if [[ "$EAS_BUILD_PLATFORM" == "android" ]]; then
   done
 
   if [[ "$EAS_BUILD_PROFILE" == "test" ]]; then
-    detox test --configuration android.release --headless
+    detox test --configuration android.emu.release --headless
   fi
   if [[ "$EAS_BUILD_PROFILE" == "test_debug" ]]; then
-    detox test --configuration android.debug --headless
+    detox test --configuration android.emu.debug --headless
   fi
 
   # Kill emulator

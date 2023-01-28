@@ -14,8 +14,9 @@
 		"test": "jest __tests__/*",
 		"test:watch": "yarn test --watch",
 		"test:ci": "yarn test --coverage",
-		"chmod +x eas-build-pre-install": "./eas-hooks/eas-build-pre-install.sh",
-		"chmod +x eas-build-on-success": "./eas-hooks/eas-build-on-success.sh",
+		"eas-build-pre-install": "chmod +x eas-hooks/*.sh ; ./eas-hooks/eas-build-pre-install.sh",
+		"eas-build-on-success": "./eas-hooks/eas-build-on-success.sh",
+		"e2e:build": "detox build -c  android.emu.release",
 		"e2e:test": "detox test -c  android.emu.release"
 	},
 	"husky": {
