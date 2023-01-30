@@ -31,9 +31,9 @@ https://data.messari.io/api/v1/assets/btc/metrics
 
 #### **Pre Steps**
 
-We are using `detox` framework along with `jest` as test-runner.  
-We added `@config-plugins/detox` plugin to automatically configure the Android native code to support Detox. So we nee to
-Run `npx expo prebuild` to generate the android folder.
+- Using `detox` framework along with `jest` as test-runner.
+- Using `@config-plugins/detox` plugin to automatically configure the Android native code to support Detox
+- Run `npx expo prebuild` to generate the android folder.
 
 #### **Run e2e test locally**
 
