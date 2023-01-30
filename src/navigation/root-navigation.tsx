@@ -2,7 +2,7 @@ import * as React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { StyleSheet } from 'react-native'
-import { Cryptos } from '../screens/cryptos'
+import { NewMessageForm } from '../screens/new-message-form'
 import { TRANSPARENT } from '../theme/colors'
 
 const Stack = createStackNavigator()
@@ -19,7 +19,7 @@ export const RootNavigator = () => {
 						headerTitle: 'Cryptos',
 					}}
 					name="Cryptos"
-					component={Cryptos}
+					component={NewMessageForm}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>

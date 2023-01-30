@@ -4,6 +4,7 @@ import { BLACK, WHITE } from './colors'
 import { SCALE_18, SCALE_30 } from './spacing'
 
 const DefaultStyles = StyleSheet.create({
+	confirmLabel: { color: WHITE, textTransform: 'capitalize' },
 	container: {
 		alignItems: 'center',
 		backgroundColor: WHITE,
@@ -14,12 +15,7 @@ const DefaultStyles = StyleSheet.create({
 	flexRow: {
 		flexDirection: 'row',
 	},
-	indicatorLoading: {
-		alignSelf: 'center',
-		backgroundColor: WHITE,
-		flex: 1,
-		width: '100%',
-	},
+	flexStart: { alignSelf: 'flex-start' },
 	screenTitle: {
 		color: BLACK,
 		fontSize: SCALE_30,
