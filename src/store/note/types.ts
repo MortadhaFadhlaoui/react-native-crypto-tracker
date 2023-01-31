@@ -1,5 +1,5 @@
 import { actionCreatorFactory } from 'typescript-fsa'
-import { Note } from '../../types/note'
+import { Note } from '../../types/types'
 import { ErrorPayload } from '../types'
 
 const actionCreator = actionCreatorFactory()

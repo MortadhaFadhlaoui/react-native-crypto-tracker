@@ -8,7 +8,7 @@ import {
 	DataSnapshot,
 } from 'firebase/database'
 import db from '../../firebase.config'
-import { FirebaseResponse, Note } from '../types/note'
+import { FirebaseResponse, Note } from '../types/types'
 
 const dbRef = (id: number | null): DatabaseReference => {
 	if (id) return ref(db, `notes/${id}`)

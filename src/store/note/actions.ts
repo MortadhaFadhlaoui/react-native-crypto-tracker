@@ -1,5 +1,5 @@
 import { NoteActions } from './types'
-import { Note } from '../../types/note'
+import { Note } from '../../types/types'
 
 export const getNotesAction = () => {
 	return NoteActions.GET_ACTION()

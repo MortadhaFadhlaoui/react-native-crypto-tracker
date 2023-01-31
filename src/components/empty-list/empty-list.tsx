@@ -1,7 +1,7 @@
 import React from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View } from 'react-native'
 import { EmptyListProps } from './empty-list.props'
-import { BLUE_SKY } from '../../theme/colors'
+import { styles } from './empty-list.styles'
 
 export const EmptyList = ({
 	containerStyle,
@@ -9,12 +9,8 @@ export const EmptyList = ({
 	emptyText,
 }: EmptyListProps) => {
 	return (
-		<View style={containerStyle}>
+		<View style={[styles.container, containerStyle]}>
 			<Text style={[styles.textStyle, textStyle]}>{emptyText}</Text>
 		</View>
 	)
 }
-
-const styles = StyleSheet.create({
-	textStyle: { color: BLUE_SKY, textTransform: 'capitalize' },
-})

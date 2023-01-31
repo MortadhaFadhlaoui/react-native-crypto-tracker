@@ -1,34 +1,23 @@
 import * as React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { StyleSheet } from 'react-native'
-import { NewMessageForm } from '../screens/new-message-form'
-import { TRANSPARENT } from '../theme/colors'
+import { DreamsScreen } from '../screens/dreams/dreams'
 
 const Stack = createStackNavigator()
 
 export const RootNavigator = () => {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator
-				screenOptions={{
-					headerStyle: styles.headerStyle,
-				}}>
+			<Stack.Navigator>
 				<Stack.Screen
 					options={{
-						headerTitle: 'Cryptos',
+						headerTitleAlign: 'center',
+						headerTitle: 'Dreams',
 					}}
-					name="Cryptos"
-					component={NewMessageForm}
+					name="Dreams"
+					component={DreamsScreen}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	)
 }
-
-const styles = StyleSheet.create({
-	headerStyle: {
-		elevation: 0,
-		shadowColor: TRANSPARENT,
-	},
-})

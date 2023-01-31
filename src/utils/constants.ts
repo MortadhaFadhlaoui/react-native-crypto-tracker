@@ -1,1 +1,0 @@
-export const STANDARD_SCREEN_HEIGHT = 812
