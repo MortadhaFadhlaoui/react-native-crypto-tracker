@@ -34,6 +34,13 @@
 				"projectId": "04d4dd52-8d59-4a05-a924-5646e6533d28"
 			}
 		},
-		"plugins": ["@config-plugins/detox"]
+		"plugins": [
+			[
+				"@config-plugins/detox",
+				{
+					"subdomains": "*"
+				}
+			]
+		]
 	}
 }
