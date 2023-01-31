@@ -5,3 +5,4 @@ coverage/
 android/
 ios/
 .history/
+.env
