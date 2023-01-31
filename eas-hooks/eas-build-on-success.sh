@@ -4,7 +4,7 @@ set -eox pipefail
 
 ANDROID_EMULATOR=FWVGA_API_30
 
-if [[ "$EAS_BUILD_PLATFORM" == "android" ]]; then
+if [[ "$EAS_BUILD_PLATFORM" == "android" && "$EAS_BUILD_PROFILE" == "test"* ]]; then
   # Start emulator
   $ANDROID_SDK_ROOT/emulator/emulator @$ANDROID_EMULATOR -no-audio -no-boot-anim -no-window -use-system-libs 2>&1 >/dev/null &
 
@@ -20,17 +20,11 @@ if [[ "$EAS_BUILD_PLATFORM" == "android" ]]; then
   if [[ "$EAS_BUILD_PROFILE" == "test" ]]; then
     detox test --configuration android.emu.release --headless
   fi
-  if [[ "$EAS_BUILD_PROFILE" == "test_debug" ]]; then
-    detox test --configuration android.emu.debug --headless
-  fi
 
   # Kill emulator
   adb emu kill
 else
   if [[  "$EAS_BUILD_PROFILE" == "test" ]]; then
     detox test --configuration ios.release --headless
-  fi
-  if [[ "$EAS_BUILD_PROFILE" == "test_debug" ]]; then
-    detox test --configuration ios.debug --headless
   fi
 fi
