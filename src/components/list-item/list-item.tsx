@@ -1,11 +1,12 @@
 import React, { memo } from 'react'
+import { TouchableWithoutFeedback } from 'react-native'
 import { Text } from 'react-native-paper'
 import Animated, { useAnimatedStyle, withTiming } from 'react-native-reanimated'
 import { ListItemProps } from './list-item.props'
 import { styles } from './list-item.styles'
 
 export const ListItem = memo(
-	({ id, backgroundColor, body, viewableItems }: ListItemProps) => {
+	({ id, backgroundColor, body, viewableItems, onPress }: ListItemProps) => {
 		const rStyle = useAnimatedStyle(() => {
 			const isVisible = Boolean(
 				viewableItems.value
@@ -24,9 +25,11 @@ export const ListItem = memo(
 		}, [])
 
 		return (
-			<Animated.View style={[styles.container, { backgroundColor }, rStyle]}>
-				<Text>{body}</Text>
-			</Animated.View>
+			<TouchableWithoutFeedback onPress={() => onPress(id)}>
+				<Animated.View style={[styles.container, { backgroundColor }, rStyle]}>
+					<Text>{body}</Text>
+				</Animated.View>
+			</TouchableWithoutFeedback>
 		)
 	},
 )

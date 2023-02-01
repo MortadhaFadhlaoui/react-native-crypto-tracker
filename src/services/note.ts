@@ -24,6 +24,7 @@ export const addNote = async (note: Note): Promise<void> => {
 }
 
 export const updateNote = async (note: Note): Promise<void> => {
+	console.log(note)
 	return await update(dbRef(note.id), note)
 }
 

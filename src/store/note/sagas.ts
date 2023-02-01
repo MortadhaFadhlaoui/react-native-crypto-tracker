@@ -17,7 +17,7 @@ function* GET_ACTION() {
 
 		yield put({
 			type: NoteActions.GET_ACTION_SUCCESS.toString(),
-			payload: notes,
+			payload: notes.reverse(),
 		})
 	} catch (error) {
 		yield put({
@@ -32,7 +32,7 @@ function* ADD_ACTION({
 }: ReturnType<typeof NoteActions.ADD_ACTION>) {
 	try {
 		yield call(addNote, newNote)
-		const { notes } = yield select(state => state.notes)
+		const { notes } = yield select(state => state.note)
 
 		yield put({
 			type: NoteActions.GET_ACTION_SUCCESS.toString(),
@@ -54,7 +54,7 @@ function* REMOVE_ACTION({
 }: ReturnType<typeof NoteActions.REMOVE_ACTION>) {
 	try {
 		yield call(removeNote, id)
-		const { notes }: NoteState = yield select(state => state.notes)
+		const { notes }: NoteState = yield select(state => state.note)
 
 		const { notes: newNotes, index } = findNoteIndexById(notes, id)
 
@@ -83,7 +83,7 @@ function* UPDATE_ACTION({
 }: ReturnType<typeof NoteActions.UPDATE_ACTION>) {
 	try {
 		yield call(updateNote, updatedNote)
-		const { notes }: NoteState = yield select(state => state.notes)
+		const { notes }: NoteState = yield select(state => state.note)
 
 		const { notes: newNotes, index } = findNoteIndexById(notes, updatedNote.id)
 
@@ -93,6 +93,10 @@ function* UPDATE_ACTION({
 		}
 		yield put({
 			type: NoteActions.UPDATE_ACTION_SUCCESS.toString(),
+		})
+		yield put({
+			type: NoteActions.GET_ACTION_SUCCESS.toString(),
+			payload: newNotes,
 		})
 	} catch (error) {
 		yield put({

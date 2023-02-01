@@ -7,7 +7,9 @@ describe('NewMessageForm', () => {
 	describe('clicking send', () => {
 		// Interaction
 		it('clears the message field', () => {
-			const { getByPlaceholderText, getByText } = render(<DreamsScreen />)
+			const { getByPlaceholderText, getByText } = render(
+				<DreamsScreen navigation={undefined} route={undefined} />,
+			)
 
 			fireEvent.changeText(getByPlaceholderText('Message'), 'Hello world')
 			fireEvent.press(getByText('Send'))
@@ -22,7 +24,9 @@ describe('NewMessageForm', () => {
 		it('calls the onSend prop', () => {
 			const messageText = 'Hello world'
 			const sendHandler = jest.fn()
-			const { getByPlaceholderText, getByText } = render(<DreamsScreen />)
+			const { getByPlaceholderText, getByText } = render(
+				<DreamsScreen navigation={undefined} route={undefined} />,
+			)
 
 			fireEvent.changeText(getByPlaceholderText('Message'), 'Hello world')
 			fireEvent.press(getByText('Send'))

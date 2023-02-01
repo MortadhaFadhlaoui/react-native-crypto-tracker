@@ -1,18 +1,8 @@
-import React from 'react'
-import { View, StyleSheet } from 'react-native'
+import React, { memo } from 'react'
+import { View } from 'react-native'
 import { SeparatorProps } from './separator.props'
-import { WHITE } from '../../theme/colors'
+import { styles } from './separator.styles'
 
-const Separator = ({ style }: SeparatorProps) => {
+export const Separator = memo(({ style }: SeparatorProps) => {
 	return <View style={[styles.separator, style]} />
-}
-
-const styles = StyleSheet.create({
-	separator: {
-		backgroundColor: WHITE,
-		height: 2,
-		paddingVertical: 15,
-	},
 })
-
-export default Separator

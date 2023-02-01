@@ -6,17 +6,17 @@ import { useDispatch, useSelector } from 'react-redux'
 import { styles } from './dreams.styles'
 import { EmptyList } from '../../components/empty-list/empty-list'
 import { ListItem } from '../../components/list-item/list-item'
-import Separator from '../../components/separator/separator'
-import {
-	addNoteAction,
-	getNotesAction,
-	//	removeNoteAction,
-} from '../../store/note/actions'
+import { Separator } from '../../components/separator/separator'
+import { DreamsScreenProps } from '../../navigation/types'
+import { getNotesAction } from '../../store/note/actions'
 import { ApplicationState } from '../../store/types'
-import { BLACK, BLUE_SKY, GREEN1, WHITE } from '../../theme/colors'
+import { BLACK, BLUE_SKY, GREEN1 } from '../../theme/colors'
+import { DefaultStyles } from '../../theme/styles'
 import { DreamType } from '../../types/enum'
 
-export const DreamsScreen = (): ReactElement => {
+export const DreamsScreen = ({
+	navigation,
+}: DreamsScreenProps): ReactElement => {
 	const dispatch = useDispatch()
 	const vItems = useSharedValue<ViewToken[]>([])
 
@@ -25,14 +25,6 @@ export const DreamsScreen = (): ReactElement => {
 	)
 
 	useEffect(() => {
-		/*dispatch(
-			addNoteAction({
-				id: Date.now(),
-				type: DreamType.GOOD,
-				body: 'First body',
-			}),
-		)
-		dispatch(removeNoteAction(1675180873164))*/
 		dispatch(getNotesAction())
 	}, [])
 
@@ -52,26 +44,30 @@ export const DreamsScreen = (): ReactElement => {
 		{ viewabilityConfig: viewabilityConfig.current, onViewableItemsChanged },
 	])
 
-	const addNewDream = () => {
-		console.log('ok')
+	const handleNavigateToDream = (id?: number) => {
+		let note
+		if (id) note = notes.find(n => n.id === id)
+		navigation.navigate('Dream', { note })
 	}
 
 	if (isLoading)
-		return <ActivityIndicator style={styles.container} color={BLACK} />
+		return <ActivityIndicator style={DefaultStyles.container} color={BLACK} />
 
 	return (
-		<View style={styles.container}>
+		<View style={DefaultStyles.container}>
 			{notes && notes.length > 0 ? (
 				<FlatList
 					data={notes}
 					viewabilityConfigCallbackPairs={
 						viewabilityConfigCallbackPairs.current
 					}
+					contentContainerStyle={styles.container}
 					renderItem={({ item }) => {
 						const backgroundColor =
 							item.type === DreamType.GOOD ? BLUE_SKY : GREEN1
 						return (
 							<ListItem
+								onPress={handleNavigateToDream}
 								backgroundColor={backgroundColor}
 								{...item}
 								viewableItems={vItems}
@@ -84,7 +80,12 @@ export const DreamsScreen = (): ReactElement => {
 			) : (
 				<EmptyList emptyText={'No data'} />
 			)}
-			<FAB style={styles.fab} color={WHITE} icon="plus" onPress={addNewDream} />
+			<FAB
+				style={styles.fab}
+				color={BLUE_SKY}
+				icon="plus"
+				onPress={() => handleNavigateToDream()}
+			/>
 		</View>
 	)
 }
