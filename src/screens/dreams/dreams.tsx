@@ -51,7 +51,13 @@ export const DreamsScreen = ({
 	}
 
 	if (isLoading)
-		return <ActivityIndicator style={DefaultStyles.container} color={BLACK} />
+		return (
+			<ActivityIndicator
+				accessibilityLabel="isLoading"
+				style={DefaultStyles.container}
+				color={BLACK}
+			/>
+		)
 
 	return (
 		<View style={DefaultStyles.container}>

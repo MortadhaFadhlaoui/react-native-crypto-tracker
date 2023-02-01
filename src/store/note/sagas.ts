@@ -56,7 +56,8 @@ function* REMOVE_ACTION({
 		yield call(removeNote, id)
 		const { notes }: NoteState = yield select(state => state.note)
 
-		const { notes: newNotes, index } = findNoteIndexById(notes, id)
+		const newNotes = [...notes]
+		const index = findNoteIndexById(newNotes, id)
 
 		// delete note
 		if (index > -1) {
@@ -85,7 +86,8 @@ function* UPDATE_ACTION({
 		yield call(updateNote, updatedNote)
 		const { notes }: NoteState = yield select(state => state.note)
 
-		const { notes: newNotes, index } = findNoteIndexById(notes, updatedNote.id)
+		const newNotes = [...notes]
+		const index = findNoteIndexById(newNotes, updatedNote.id)
 
 		// update note
 		if (index > -1) {

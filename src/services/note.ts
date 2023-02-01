@@ -24,7 +24,6 @@ export const addNote = async (note: Note): Promise<void> => {
 }
 
 export const updateNote = async (note: Note): Promise<void> => {
-	console.log(note)
 	return await update(dbRef(note.id), note)
 }
 
@@ -32,17 +31,10 @@ export const removeNote = async (id: number): Promise<void> => {
 	return await remove(dbRef(id))
 }
 
-export const findNoteIndexById = (
-	notes: Note[],
-	id: number,
-): { notes: Note[]; index: number } => {
+export const findNoteIndexById = (notes: Note[], id: number): number => {
 	// Create new array with new ref
-	const newNotes = [...notes]
-	const index = newNotes.findIndex(note => note.id === id)
-	return {
-		notes: newNotes,
-		index,
-	}
+	const index = notes.findIndex(note => note.id === id)
+	return index
 }
 
 export const mapFirebaseResponse = (
